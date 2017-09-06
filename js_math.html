@@ -1,0 +1,48 @@
+<html>
+        <head>
+            <title>js math</title>
+        </head>
+        <body>
+            <h4 id='headerelem'>js math</h4>
+        </body>
+        <script>
+            //first
+            function zero_negativity(arr){
+                for (let i = 0; i < arr.length; i++){
+                    if (arr[i] < 0) {return false;}
+                }
+                return true;
+            }
+
+            //second
+            function is_even(n){
+                return n % 2 === 0;
+            }
+
+            //third
+            function how_many_even(arr){
+                var n = 0;
+                for (var i = 0; i < arr.length; i++){
+                    if (is_even(arr[i])){
+                        n += 1;
+                    }
+                }
+                return n;
+            }
+
+            //fourth
+            function create_dummy_array(n){
+                let arr = [];
+                for (let i = 0; i < n; i++){
+                    arr.push(Math.floor(Math.random()*10));
+                }
+                return arr;
+            }
+
+            //fifth
+            function random_choice(arr){
+                return arr[Math.floor(Math.random() * arr.length)];
+            }
+        </script>
+    </html>
+    
