@@ -1,0 +1,60 @@
+<html>
+        <head>
+            <title>js basics I</title>
+        </head>
+        <body>
+            <h4 id='headerelem'>js basics (II)</h4>
+        </body>
+        <script>
+            function magic_multiply(x, y){
+                if (typeof y != 'number'){
+                    throw 'Error! '+y+' is not a number';
+                }
+                if (typeof x == 'number'){
+                    return x * y;
+                }
+                if (typeof x == 'array'){
+                    for (let idx = 0; idx < x.length; idx++){
+                        x[idx] = magic_multiply(x[idx], y);
+                    }
+                    return x;
+                }
+                else if (typeof x == 'string'){
+                    let op = '';
+                    for (let idx = 0; idx < y; idx++){
+                        op += x;
+                    }
+                    return x;
+                }
+            }
+
+
+            console.log("//test 1")
+            let test1 = magic_multiply(5, 2);
+            console.log(test1);
+            // => 10
+
+            console.log("// Test 2")
+            let test2 = magic_multiply(0, 0);
+            console.log(test2);
+            // => "All inputs 0"
+
+            console.log("// Test 3")
+            let test3 = magic_multiply([1, 2, 3], 2);
+            console.log(test3);
+            // => [2, 4, 6]
+
+
+            console.log("// Test 4")
+            let test4 = magic_multiply(7, "three");
+            console.log(test4);
+            // => "Error: Can not multiply by string"
+
+            console.log("// Test 5 - Bonus")
+            let test5 = magic_multiply("Brendo", 4);
+            console.log(test5);
+            // => "BrendoBrendoBrendoBrendo"            
+
+        </script>
+    </html>
+    
