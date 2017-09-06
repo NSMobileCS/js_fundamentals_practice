@@ -1,0 +1,55 @@
+<html>
+        <head>
+            <title></title>
+        </head>
+        <body>
+            <h4 id='headerelem'>js intermediate practice</h4>
+        </body>
+        <script>
+            //first
+            function starString(n, char){
+                if (char == undefined){
+                    char = "*";
+                }
+                else {
+                    char = char[0].toLowerCase();
+                }
+                let op = '';
+                for (var i = 0; i < n; i++){
+                    op += char;
+                }
+                return op;
+            }
+
+            //part II
+            function drawStars0(arr){
+                for (let i = 0; i<arr.length; i++){
+                    console.log(starString(arr[i]));
+                }
+            }    
+
+            //part III
+            function drawStars(arr){
+                for (let i = 0; i<arr.length; i++){
+                    let val = arr[i];
+                    if (typeof val == 'string'){
+                        console.log(starString(val.length, val));
+                    }
+                    else {
+                        console.log(starString(arr[i]));
+                    }
+                }
+            }    
+            console.log('testing...')
+            console.log('starString(4)', 'expected output: ****')
+            console.log(starString(4));
+
+            console.log('drawStars0([1,2,3,4])', 'expected output: \n*\n**\n***\n****')
+            console.log(drawStars([1,2,3,4]));
+
+            console.log("drawStars0([1,'good',3,'for'])", 'expected output: \n*\ngggg\n***\nfff')
+            console.log(drawStars([1,'good',3,'for']));
+            
+        </script>
+    </html>
+    
