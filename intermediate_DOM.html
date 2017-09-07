@@ -1,0 +1,33 @@
+<html>
+    <body>
+        <h1>Students</h1>
+        <ul id="main">
+            <!-- this is empty-->
+        </ul> 
+    <script>
+        // function appendList(array, id){
+        //     for (let n = 0; n < array.length ; n++){
+        //         let item = document.createElement('li');
+        //         item.innerHTML = array[n];
+        //         document.getElementById(id).appendChild(item);
+        //     }
+        // };
+        function superAppendList(array, id, elemType){
+            if (elemType == undefined) {
+                elemType = 'li';
+            }
+            for (let n = 0; n < array.length ; n++){
+                let item = document.createElement(elemType);
+                item.innerHTML = array[n];
+                document.getElementById(id).appendChild(item);
+            }
+        };
+        let appendList = superAppendList;
+        let students = ["Jeff", "Jenny", "Javier", "Joslyn", "Joe", "Jane", "Django"];
+        let target_id = "main";
+        
+
+        appendList(students, target_id);
+    </script>   
+    </body>
+</html>
